@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 class Conversation {
 
@@ -21,31 +22,42 @@ class Conversation {
     //Determines how many rounds have occurred
     Integer roundscounter = 0; 
 
+    //Creates arraylist to store transcript of converstaion
+    ArrayList<String> transcript = new ArrayList<String>();
+    transcript.add("TRANSCRIPT");
+
     //First Chatbot response
     System.out.println("Hi There! What's on your mind?"); //
-    
+    transcript.add("Hi There! What's on your mind?");
+
     //this loop breaks after user's indicated number of rounds is completed
     while(roundsint > roundscounter) {
       String answer;
       answer = myObj.nextLine();
+      transcript.add(answer);
       roundscounter++;
-     
-      String response = answer;
       
+      //String response = answer;
+      //Do I create a dict to replace all at once?
+
       if (answer.contains("I"));
-        answer = answer.replaceAll("I","you");
+        answer = answer.replace("I","you");
       if (answer.contains("me"));
-        answer = answer.replaceAll("me", "you");
+        answer = answer.replace("me", "you");
       if (answer.contains("am"));
-        answer = answer.replaceAll("you", "I");
+        answer = answer.replace("you", "I");
       if (answer.contains("my"));
-        answer = answer.replaceAll("my", "your");
+        answer = answer.replace("my", "your");
       if (answer.contains("your"));
-        answer = answer.replaceAll("your", "my");
-      System.out.print(answer+"?");
+        answer = answer.replace("your", "my");
+      System.out.print(answer+"?"+"\n");
+      transcript.add(answer+"?");
+
     }
 
     System.out.println("See ya!");
+    transcript.add("See ya!");
+    System.out.println(transcript);
     myObj.close();
   }
 }
@@ -66,3 +78,5 @@ class Conversation {
 //https://stackoverflow.com/questions/12519335/resource-leak-in-is-never-closed
 //https://www.w3schools.com/java/java_conditions.asp
 //https://stackoverflow.com/questions/30183807/java-string-replace-exact-word
+//https://www.w3schools.com/java/java_arraylist.asp
+
