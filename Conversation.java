@@ -29,10 +29,20 @@ class Conversation {
       String answer;
       answer = myObj.nextLine();
       roundscounter++;
-      if (answer.contains("I"))
-        
-
-      System.out.println("Cool");
+     
+      String response = answer;
+      
+      if (answer.contains("I"));
+        answer = answer.replaceAll("I","you");
+      if (answer.contains("me"));
+        answer = answer.replaceAll("me", "you");
+      if (answer.contains("am"));
+        answer = answer.replaceAll("you", "I");
+      if (answer.contains("my"));
+        answer = answer.replaceAll("my", "your");
+      if (answer.contains("your"));
+        answer = answer.replaceAll("your", "my");
+      System.out.print(answer+"?");
     }
 
     System.out.println("See ya!");
@@ -55,3 +65,4 @@ class Conversation {
 //https://www.w3schools.com/java/java_while_loop.asp
 //https://stackoverflow.com/questions/12519335/resource-leak-in-is-never-closed
 //https://www.w3schools.com/java/java_conditions.asp
+//https://stackoverflow.com/questions/30183807/java-string-replace-exact-word
