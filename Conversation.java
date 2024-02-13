@@ -43,12 +43,13 @@ class Conversation {
       //Do I create a dict to replace all at once?
       //Also I only want the full word replaced, not word in word
 
-      if (!answer.contains("I") 
-      && !answer.contains("me") 
-      && !answer.contains("am") 
-      && !answer.contains("you")
-      && !answer.contains("my")
-      && !answer.contains("your")) {
+      if (!answer.contains("\\bI\\b") 
+      && !answer.contains("\\bme\\b") 
+      && !answer.contains("\\bam\\b") 
+      && !answer.contains("\\byou\\b")
+      && !answer.contains("\\bmy\\b")
+      && !answer.contains("\\byour\\b")) {
+        
         //Creates a canned list of responses
         String[] responseStrings = new String[] {
           "Ok.", 
@@ -63,18 +64,22 @@ class Conversation {
           continue;
         }
 
-      if (answer.contains("I"));
-        answer = answer.replace("I","you");
-      if (answer.contains("me"));
-        answer = answer.replace("me", "you");
-      if (answer.contains("am"));
-        answer = answer.replace("am", "are");
-      if (answer.contains("you"));
-        answer = answer.replace("you","I");
-      if (answer.contains("my"));
-        answer = answer.replace("my", "your");
-      if (answer.contains("your"));
-        answer = answer.replace("your", "my");
+      if (answer.contains("\\bI\\b"));
+        answer = answer.replaceAll("\\bI\\b","tempyou");
+      if (answer.contains("\\bme\\b"));
+        answer = answer.replaceAll("\\bme\\b", "tempyou");
+      if (answer.contains("\\bam\\b"));
+        answer = answer.replaceAll("\\bam\\b", "are");
+      if (answer.contains("\\byou\\b"));
+        answer = answer.replaceAll("\\byou\\b","I");
+      if (answer.contains("\\bmy\\b"));
+        answer = answer.replaceAll("\\bmy\\b", "tempyour");
+      if (answer.contains("\\byour\\b"));
+        answer = answer.replaceAll("\\byour\\b", "my");
+      if (answer.contains("\\btempyou\\b"));
+        answer = answer.replaceAll("tempyou", "you");
+      if (answer.contains("\\btempyour\\b"));
+        answer = answer.replaceAll("tempyour", "your");
       
       System.out.print(answer+"?"+"\n");
       transcript.add(answer+"?");
@@ -110,5 +115,8 @@ class Conversation {
 //https://stackoverflow.com/questions/30183807/java-string-replace-exact-word
 //https://www.w3schools.com/java/java_arraylist.asp
 //https://ioflood.com/blog/java-string-array/#:~:text=In%20Java%2C%20you%20can%20create,the%20array%20using%20their%20index.
-
+//https://rollbar.com/blog/handling-the-unreachable-statement-error-in-java/
+//https://stackoverflow.com/questions/15730134/opposite-of-contains-does-not-contain
+//https://www.javatpoint.com/how-to-pick-random-elements-from-an-array
+//https://www.codementor.io/@dev_amitpandey/replace-the-whole-word-with-word-boundaries-in-java-w5l360t5z
 

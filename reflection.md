@@ -6,6 +6,6 @@ Use this file to record your reflection on this assignment.
 - Can you draw any conclusion about programming in general from the similarities or the differences between the two languages? 
 - What worked, what didn't, what advice would you give someone taking this course in the future?
 
-
+I met with Bobi on February 12th at 8:20 PM
 
 MAKE SURE TO MENTION SOURCES AND WHAT USED FOR
