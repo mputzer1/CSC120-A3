@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Random;
 
 class Conversation {
 
@@ -15,6 +16,7 @@ class Conversation {
     
     //User inputs number of rounds
     roundstr = myObj.nextLine(); 
+    System.out.println("\n");
 
     //converts user string answer to integer
     Integer roundsint = Integer.valueOf(roundstr); 
@@ -24,7 +26,7 @@ class Conversation {
 
     //Creates arraylist to store transcript of converstaion
     ArrayList<String> transcript = new ArrayList<String>();
-    transcript.add("TRANSCRIPT");
+    transcript.add("TRANSCRIPT:");
 
     //First Chatbot response
     System.out.println("Hi There! What's on your mind?"); //
@@ -39,25 +41,53 @@ class Conversation {
       
       //String response = answer;
       //Do I create a dict to replace all at once?
+      //Also I only want the full word replaced, not word in word
+
+      if (!answer.contains("I") 
+      && !answer.contains("me") 
+      && !answer.contains("am") 
+      && !answer.contains("you")
+      && !answer.contains("my")
+      && !answer.contains("your")) {
+        //Creates a canned list of responses
+        String[] responseStrings = new String[] {
+          "Ok.", 
+          "I understand.", 
+          "That makes sense.", 
+          "Sounds hard."}; 
+          Random random = new Random();
+          String RandomElement;
+          RandomElement = responseStrings[random.nextInt(responseStrings.length)];
+          System.out.println(RandomElement);
+          transcript.add(RandomElement);
+          continue;
+        }
 
       if (answer.contains("I"));
         answer = answer.replace("I","you");
       if (answer.contains("me"));
         answer = answer.replace("me", "you");
       if (answer.contains("am"));
-        answer = answer.replace("you", "I");
+        answer = answer.replace("am", "are");
+      if (answer.contains("you"));
+        answer = answer.replace("you","I");
       if (answer.contains("my"));
         answer = answer.replace("my", "your");
       if (answer.contains("your"));
         answer = answer.replace("your", "my");
+      
       System.out.print(answer+"?"+"\n");
       transcript.add(answer+"?");
-
+        
     }
 
-    System.out.println("See ya!");
+    System.out.println("See ya!"+"\n");
     transcript.add("See ya!");
-    System.out.println(transcript);
+
+    //Prints a transcript of the conversation via the transcript ArrayList
+    for (int i=0; i < transcript.size(); i++) {
+      System.out.println(transcript.get(i));
+    }
     myObj.close();
   }
 }
@@ -79,4 +109,6 @@ class Conversation {
 //https://www.w3schools.com/java/java_conditions.asp
 //https://stackoverflow.com/questions/30183807/java-string-replace-exact-word
 //https://www.w3schools.com/java/java_arraylist.asp
+//https://ioflood.com/blog/java-string-array/#:~:text=In%20Java%2C%20you%20can%20create,the%20array%20using%20their%20index.
+
 
