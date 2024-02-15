@@ -42,7 +42,7 @@ No (Kudos!) Handles mirror words with punctuation
 
 No (Kudos!) Generates output with correct punctuation & capitalization
 
-Yes (Kudos!) Handles you --> me/I dilemma
+No (Kudos!) Handles you --> me/I dilemma
 
 
 
