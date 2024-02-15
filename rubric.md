@@ -12,7 +12,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 ### Level 1 (4 pts)
 
-_____ 1 pt: `reflection.md` lists the classmates you consulted & TA hours attended
+Yes 1 pt: `reflection.md` lists the classmates you consulted & TA hours attended
 
 Yes 1 pt: Program queries user for number of conversation rounds
 
@@ -42,7 +42,7 @@ _____ (Kudos!) Handles mirror words with punctuation
 
 _____ (Kudos!) Generates output with correct punctuation & capitalization
 
-_____ (Kudos!) Handles you --> me/I dilemma
+Yes (Kudos!) Handles you --> me/I dilemma
 
 
 

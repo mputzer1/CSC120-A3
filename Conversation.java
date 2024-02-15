@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Arrays;
 
 class Conversation {
 
@@ -37,18 +38,15 @@ class Conversation {
       String answer;
       answer = myObj.nextLine();
       transcript.add(answer);
+      String[] answerarray = answer.split("\\s+");
       roundscounter++;
       
-      //String response = answer;
-      //Do I create a dict to replace all at once?
-      //Also I only want the full word replaced, not word in word
-
-      if (!answer.contains("\\bI\\b") 
-      && !answer.contains("\\bme\\b") 
-      && !answer.contains("\\bam\\b") 
-      && !answer.contains("\\byou\\b")
-      && !answer.contains("\\bmy\\b")
-      && !answer.contains("\\byour\\b")) {
+      if (!Arrays.asList(answerarray).contains("I") 
+      && !Arrays.asList(answerarray).contains("me") 
+      && !Arrays.asList(answerarray).contains("am") 
+      && !Arrays.asList(answerarray).contains("you") 
+      && !Arrays.asList(answerarray).contains("my") 
+      && !Arrays.asList(answerarray).contains("your") ) {
         
         //Creates a canned list of responses
         String[] responseStrings = new String[] {
@@ -64,21 +62,21 @@ class Conversation {
           continue;
         }
 
-      if (answer.contains("\\bI\\b"));
+      if (Arrays.asList(answerarray).contains("I"));
         answer = answer.replaceAll("\\bI\\b","tempyou");
-      if (answer.contains("\\bme\\b"));
+      if (Arrays.asList(answerarray).contains("me")) ;
         answer = answer.replaceAll("\\bme\\b", "tempyou");
-      if (answer.contains("\\bam\\b"));
+      if (Arrays.asList(answerarray).contains("am"));
         answer = answer.replaceAll("\\bam\\b", "are");
-      if (answer.contains("\\byou\\b"));
+      if (Arrays.asList(answerarray).contains("you"));
         answer = answer.replaceAll("\\byou\\b","I");
-      if (answer.contains("\\bmy\\b"));
+      if (Arrays.asList(answerarray).contains("my"));
         answer = answer.replaceAll("\\bmy\\b", "tempyour");
-      if (answer.contains("\\byour\\b"));
+      if (Arrays.asList(answerarray).contains("your"));
         answer = answer.replaceAll("\\byour\\b", "my");
-      if (answer.contains("\\btempyou\\b"));
+      if (Arrays.asList(answerarray).contains("tempyou"));
         answer = answer.replaceAll("tempyou", "you");
-      if (answer.contains("\\btempyour\\b"));
+      if (Arrays.asList(answerarray).contains("tempyour"));
         answer = answer.replaceAll("tempyour", "your");
       
       System.out.print(answer+"?"+"\n");
@@ -119,4 +117,5 @@ class Conversation {
 //https://stackoverflow.com/questions/15730134/opposite-of-contains-does-not-contain
 //https://www.javatpoint.com/how-to-pick-random-elements-from-an-array
 //https://www.codementor.io/@dev_amitpandey/replace-the-whole-word-with-word-boundaries-in-java-w5l360t5z
+//https://stackoverflow.com/questions/7899525/how-to-split-a-string-by-space
 

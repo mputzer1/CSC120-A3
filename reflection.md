@@ -8,4 +8,8 @@ Use this file to record your reflection on this assignment.
 
 I met with Bobi on February 12th at 8:20 PM
 
+I also met with Paola on February 14th at 7:30 PM
+
+I talked to Jo from the morning class period about how to remove punctuation from the computer response. She showed me her code and we compared how we approached the assignment differently.
+
 MAKE SURE TO MENTION SOURCES AND WHAT USED FOR
