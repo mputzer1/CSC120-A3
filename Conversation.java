@@ -60,7 +60,7 @@ class Conversation {
       && !Arrays.asList(answerarray).contains("your") ) {
         
         //Creates a canned list of responses
-        String[] responseStrings = new String[] {
+        String[] responseStrings = {
           "Ok.", 
           "I understand.", 
           "That makes sense.", 
