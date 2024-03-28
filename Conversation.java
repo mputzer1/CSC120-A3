@@ -3,14 +3,20 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Arrays;
 
-//The conversation class where the chatbot is stored
+/**
+ * The conversation class where the chatbot is stored
+ */
 class Conversation {
 
-  public static void main(String[] arguments) {
+  /**
+   * The main that undergoes each of the chatbot's actions step by step
+   * @param args
+   */
+  public static void main(String[] args) {
     
     //creates scanner for user input
     Scanner myObj = new Scanner(System.in);
-    
+
     //determines that user input is a string
     String roundstr; 
 
